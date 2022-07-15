@@ -46,22 +46,12 @@ class TestController extends GetxController{
 
   void shiftdata(){
     dataShiftDone.value = [];
-    rotate(dataShift, int.parse(shift.value.text));
-    dataShiftDone.addAll(rotate(dataShift, int.parse(shift.value.text)));
+    functionshift(dataShift, int.parse(shift.value.text));
+    dataShiftDone.addAll(functionshift(dataShift, int.parse(shift.value.text)));
   }
 
-    List<Object> rotate(List<Object> list, int v) {
+    List<Object> functionshift(List<Object> list, int v) {
       var i = v % list.length;
       return list.sublist(i)..addAll(list.sublist(0, i));
     }
 }
-
-// class Data {
-//   String key;
-//   int jumlah;
-//   Data(this.key, this.jumlah);
-//   @override
-//   String toString() {
-//     return '{ ${this.key}, ${this.jumlah} }';
-//   }
-// }
